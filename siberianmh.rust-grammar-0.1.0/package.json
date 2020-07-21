@@ -1,0 +1,45 @@
+{
+	"name": "rust-grammar",
+	"displayName": "Rust Grammar",
+	"description": "Syntax highlight for Rust files",
+	"version": "0.1.0",
+	"publisher": "siberianmh",
+	"engines": {
+		"vscode": "^1.29.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/HashimotoYT/vscode-rust-grammar.git"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"icon": "icon.png",
+	"contributes": {
+		"languages": [
+			{
+				"id": "rust",
+				"aliases": [
+					"Rust",
+					"rust"
+				],
+				"extensions": [
+					".rs"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "rust",
+				"path": "./syntaxes/rust.tmLanguage.json",
+				"scopeName": "source.rust"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "69f77205-40be-4c50-bd1f-bef584455cdc",
+		"publisherId": "1e08d384-c371-4b21-a36e-937a29fd34ab",
+		"publisherDisplayName": "Siberian Media Holding"
+	}
+}

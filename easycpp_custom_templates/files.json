@@ -1,0 +1,15 @@
+{
+    "templates": {
+        "Example Custom Template": {
+            "directories": [
+                "ExampleDirectory"
+            ],
+            "blankFiles": [
+                "HelloWorld.txt"
+            ],
+            "openFiles": [
+                "HelloWorld.txt"
+            ]
+        }
+    }
+}

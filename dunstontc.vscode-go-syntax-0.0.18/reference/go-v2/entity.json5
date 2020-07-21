@@ -1,0 +1,116 @@
+{
+  "repository": {
+    "entity": {
+      "patterns": [
+        // {
+        //   "match": "^(\\bfunc\\b)\\s\\(([a-z]+)\\s(\\*)?([a-zA-Z]+)\\)",
+        //   "captures": {
+        //     "1": {"name": "keyword.function.go"},
+        //     "2": {"name": "variable.other.receiver.go"},
+        //     "3": {"name": "keyword.operator.address.go"},
+        //     "4": {"name": "entity.name.type.receiver.go"},
+        //   }
+        // },
+        {
+          "match": "^(\\bfunc\\b)\\s(\\w+)?\\(([a-z]+)\\s(\\*)?([a-zA-Z]+)\\)",
+          "captures": {
+            "1": {"name": "keyword.function.go"},
+            "2": {"name": "entity.name.function.go"},
+            "3": {"name": "variable.other.receiver.go"},
+            "4": {"name": "keyword.operator.address.go"},
+            "5": {"name": "entity.name.type.receiver.go"},
+          }
+        },
+        {
+          "match": "(\\*)\\w+(\\.)(\\w+)",
+          "captures": {
+            "1": {"name": "keyword.operator.address.go"},
+            "2": {"name": "punctuation.other.period.go"},
+            "3": {"name": "entity.name.type.go"},
+          }
+        },
+        {
+          // "match": "^(\\bfunc\\b)\\s(\\w+)",
+          "comment": "Function Definitions",
+          "begin": "^(\\bfunc\\b)\\s(\\w+)",
+          "beginCaptures": {
+            "1": {"name": "keyword.function.go"},
+            "2": {"name": "entity.name.function.go"},
+          },
+          "end": "\\{",
+          "patterns":[
+            {
+              "match": "(\\*)\\w+(\\.)(\\w+)",
+              "captures": {
+                "1": {"name": "keyword.operator.address.go"},
+                "2": {"name": "punctuation.other.period.go"},
+                "3": {"name": "entity.name.type.go"},
+              }
+            },
+            // {
+            //   "match": "(?<=http\\.)(\\w+)(?!\\())",
+            //   "name": "entity.name.type.param.go"
+            // },
+            // {
+            //   "match": "(?<=\\.)(?>[a-zA-Z]+\\w*)",
+            //   "name": "entity.name.type.param.go",
+            //   // "captures": {
+            //   //   "2": {"name": "entity.name.type.param.go"},
+            //   // }
+            // },
+            {"include": "$self"},
+          ],
+        },
+        // ====================================================================
+        {
+          "begin": "\\b(package)\\s+",
+          "beginCaptures": {"1": {"name": "keyword.package.go"}},
+          "end": "(?!\\G)",
+          "patterns": [
+            {
+              "match": "\\d\\w*",
+              "name": "invalid.illegal.identifier.go"
+            },
+            {
+              "match": "\\w+",
+              "name": "entity.name.package.go"
+            }
+          ]
+        },
+        {
+          "begin": "\\b(type)\\s+",
+          "beginCaptures": {"1": {"name": "keyword.type.go"}},
+          "end": "(?!\\G)",
+          "patterns": [
+            {
+              "match": "\\d\\w*",
+              "name": "invalid.illegal.identifier.go"
+            },
+            {
+              "match": "\\w+",
+              "name": "entity.name.type.go"
+            }
+          ]
+        },
+        // ====================================================================
+        {
+          "match": "(?!interface|struct)(?>\\w+)(?=\\{)",
+          "name": "entity.name.type.struct.go",
+        },
+        {
+          "match": "(?<=\\[\\])(?>\\w+)",
+          "name": "entity.name.type.go",
+        },
+        {
+          "match": "(chan)\\s(\\*)(?>\\w+)",
+          "name": "entity.name.type.go",
+          "captures": {
+            "1": {"name": "keyword.channel.go"},
+            "2": {"name": "keyword.operator.pointer.go"},
+            "3": {"name": "entity.name.type.channel.go"},
+          }
+        },
+      ]
+    }
+  }
+}

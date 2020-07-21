@@ -1,0 +1,61 @@
+{
+	"name": "goasm",
+	"displayName": "Go Asm",
+	"description": "Syntax highlighting & autocomplete for Go assembly.",
+	"version": "0.0.4",
+	"publisher": "quillaja",
+	"icon": "goasm.png",
+	"engines": {
+		"vscode": "^1.25.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/quillaja/goasm"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"activationEvents": [
+		"onLanguage:go",
+		"onLanguage:asm"
+	],
+	"main": "./autocomplete/extension",
+	"contributes": {
+		"languages": [
+			{
+				"id": "asm",
+				"aliases": [
+					"go",
+					"asm",
+					"goasm",
+					"plan9",
+					"GAS/AT&T",
+					"x86/x64"
+				],
+				"extensions": [
+					".s",
+					".S"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "asm",
+				"scopeName": "source.x86",
+				"path": "./syntaxes/goasm.tmLanguage.xml"
+			}
+		],
+		"snippets": [
+			{
+				"language": "asm",
+				"path": "./snippets/snippets.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "d1e9ba8f-c678-464c-8303-6aa86235ea9e",
+		"publisherId": "4bcd39b5-6ab3-4b6f-afb1-4365ed6c23e4",
+		"publisherDisplayName": "quillaja"
+	}
+}

@@ -1,0 +1,69 @@
+{
+	"name": "c-cpp-project-generator",
+	"displayName": "C/C++ Project Generator",
+	"description": "Generate C/C++ Projects",
+	"version": "1.2.1",
+	"icon": "resources/logo.png",
+	"publisher": "danielpinto8zz6",
+	"engines": {
+		"vscode": "^1.44.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:extension.createCProject",
+		"onCommand:extension.createCppProject"
+	],
+	"main": "./out/extension",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.createCProject",
+				"title": "Create C project"
+			},
+			{
+				"command": "extension.createCppProject",
+				"title": "Create C++ project"
+			}
+		]
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/danielpinto8zz6/c-cpp-project-generator.git"
+	},
+	"author": "danielpinto8zz6",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/danielpinto8zz6/c-cpp-project-generator/issues"
+	},
+	"homepage": "https://github.com/danielpinto8zz6/c-cpp-project-generator#readme",
+	"scripts": {
+		"vscode:prepublish": "npm run build",
+		"build": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run build",
+		"test": "node ./out/test/runTest.js",
+		"release": "release-it --disable-metrics --ci",
+		"lint": "tslint -c tslint.json \"src/**/*.ts\" --fix"
+	},
+	"devDependencies": {
+		"@types/mocha": "^7.0.2",
+		"@types/node": "^13.11.1",
+		"@types/vscode": "^1.44.0",
+		"git-cz": "^4.3.1",
+		"release-it": "^13.5.2",
+		"tslint": "^6.1.1",
+		"typescript": "^3.8.3",
+		"vscode-test": "^1.3.0"
+	},
+	"dependencies": {
+		"@types/fs-extra": "^8.1.0",
+		"fs-extra": "^9.0.0"
+	},
+	"__metadata": {
+		"id": "3b159107-8640-4206-9350-3fc6e6f277da",
+		"publisherId": "cad497d5-586d-419d-9f40-f9d14950a3dd",
+		"publisherDisplayName": "danielpinto8zz6"
+	}
+}

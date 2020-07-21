@@ -1,0 +1,107 @@
+{
+	"name": "easy-cpp-projects",
+	"displayName": "Easy C++ projects",
+	"description": "Create C++ projects easily for GCC, WSL-GCC, Clang and MSVC",
+	"version": "2.0.0",
+	"publisher": "ACharLuk",
+	"icon": "logo.png",
+	"repository": {
+		"url": "https://github.com/acharluk/easy-cpp-projects"
+	},
+	"engines": {
+		"vscode": "^1.43.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:easycpp.createProject",
+		"onCommand:easycpp.createClass",
+		"onCommand:easycpp.openCustomDir",
+		"onCommand:easycpp.convertToEasyProject",
+		"workspaceContains:.vscode/.easycpp"
+	],
+	"main": "./out/extension",
+	"contributes": {
+		"commands": [
+			{
+				"command": "easycpp.createProject",
+				"title": "Easy Cpp/C++: Create new C++ project"
+			},
+			{
+				"command": "easycpp.createClass",
+				"title": "Easy Cpp/C++: Create new class"
+			},
+			{
+				"command": "easycpp.createGetterSetter",
+				"title": "Easy Cpp/C++: Create Getter and Setter"
+			},
+			{
+				"command": "easycpp.createGetter",
+				"title": "Easy Cpp/C++: Create Getter"
+			},
+			{
+				"command": "easycpp.createSetter",
+				"title": "Easy Cpp/C++: Create Setter"
+			},
+			{
+				"command": "easycpp.openCustomDir",
+				"title": "Easy Cpp/C++: Open Custom Templates Directory"
+			},
+			{
+				"command": "easycpp.convertToEasyProject",
+				"title": "Easy Cpp/C++: Convert this folder to an Easy C++ Project"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "workbench.action.tasks.test",
+				"key": "f7"
+			},
+			{
+				"command": "workbench.action.tasks.build",
+				"key": "ctrl+f7"
+			}
+		],
+		"menus": {
+			"editor/context": [
+				{
+					"group": "z_commands",
+					"command": "easycpp.createGetterSetter",
+					"when": "editorHasSelection"
+				},
+				{
+					"group": "z_commands",
+					"command": "easycpp.createGetter",
+					"when": "editorHasSelection"
+				},
+				{
+					"group": "z_commands",
+					"command": "easycpp.createSetter",
+					"when": "editorHasSelection"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"test": "npm run compile && node ./node_modules/vscode/bin/test"
+	},
+	"devDependencies": {
+		"@types/node": "^12.12.31",
+		"@types/node-fetch": "^2.5.7",
+		"@types/vscode": "^1.43.0",
+		"tslint": "^6.1.2",
+		"typescript": "^3.9.3"
+	},
+	"dependencies": {
+		"node-fetch": "^2.6.0"
+	},
+	"__metadata": {
+		"id": "51088c24-77fc-4ac3-b2bd-bfffa800981d",
+		"publisherId": "62f0a3e0-6c14-46b1-a1c3-45d9df49b3b7",
+		"publisherDisplayName": "Alejandro Charte Luque"
+	}
+}

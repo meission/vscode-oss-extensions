@@ -1,0 +1,92 @@
+{
+	"name": "vscode-plugin-drawio",
+	"displayName": "Drawio Markdown",
+	"description": "Using draw.io edit in markdown editor",
+	"version": "1.0.18",
+	"publisher": "zhfjyq",
+	"license": "Apache-2.0",
+	"homepage": "https://github.com/zhfjyq/vscode-plugin-drawio/blob/master/README.md",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/zhfjyq/vscode-plugin-drawio.git"
+	},
+	"icon": "icon.png",
+	"keywords": [
+		"markdown",
+		"draw",
+		"uml",
+		"svg",
+		"mind",
+		"flow",
+		"flowchart",
+		"visio",
+		"mermaid"
+	],
+	"engines": {
+		"vscode": "^1.30.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:extension.drawio"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.drawio",
+				"title": "Drawio Markdown",
+				"icon": "icon.png"
+			}
+		],
+		"menus": {
+			"editor/title": [
+				{
+					"command": "extension.drawio",
+					"group": "navigation",
+					"when": "resourceLangId == markdown"
+				}
+			]
+		},
+		"configuration": {
+			"type": "object",
+			"title": "drawio configrations",
+			"properties": {
+				"drawio.assetsDirName": {
+					"type": "string",
+					"default": "drawio_assets",
+					"description": "drawio save svg file path name"
+				},
+				"drawio.offline": {
+					"type": "boolean",
+					"default": true,
+					"description": "using offline mode"
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "yarn run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pub": "vsce publish",
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "yarn run compile && node ./node_modules/vscode/bin/test"
+	},
+	"devDependencies": {
+		"@types/mocha": "^2.2.42",
+		"@types/node": "^8.10.25",
+		"typescript": "^3.1.4",
+		"vscode": "^1.1.36"
+	},
+	"dependencies": {
+		"chrome-debugging-client": "0.6.8",
+		"devtools-protocol": "^0.0.704903"
+	},
+	"__metadata": {
+		"id": "f54a0621-8b2b-4cf0-b769-ff615e4b22cb",
+		"publisherId": "0a3f06e0-70a3-4492-a7ab-3fc7df0e25fc",
+		"publisherDisplayName": "zhfjyq"
+	}
+}

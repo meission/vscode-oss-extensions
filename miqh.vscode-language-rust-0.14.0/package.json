@@ -1,0 +1,71 @@
+{
+	"name": "vscode-language-rust",
+	"displayName": "Rust Grammar",
+	"description": "Alternative grammar definition set for the Rust programming language.",
+	"keywords": [
+		"rust",
+		"language",
+		"grammar"
+	],
+	"version": "0.14.0",
+	"publisher": "miqh",
+	"license": "Apache-2.0",
+	"homepage": "https://github.com/miqid/vscode-language-rust#readme",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/miqid/vscode-language-rust.git"
+	},
+	"bugs": {
+		"url": "https://github.com/miqid/vscode-language-rust/issues"
+	},
+	"engines": {
+		"vscode": "*"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "rust",
+				"aliases": [
+					"Rust",
+					"rust"
+				],
+				"extensions": [
+					".rs"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "rust",
+				"scopeName": "source.rust",
+				"path": "./language-grammar.json"
+			}
+		]
+	},
+	"qna": "false",
+	"icon": "images/extension-icon.png",
+	"galleryBanner": {
+		"color": "#353535",
+		"theme": "dark"
+	},
+	"scripts": {
+		"build": "./node_modules/.bin/tsc -p .",
+		"check": "./node_modules/.bin/tslint -p .",
+		"vscode:prepublish": "npm i && npm run check && npm run build && node ./dist/prepublish"
+	},
+	"devDependencies": {
+		"@types/node": "^10.7.1",
+		"axios": "^0.18.0",
+		"tslint": "^5.11.0",
+		"typescript": "^3.0.1"
+	},
+	"__metadata": {
+		"id": "3a92c94c-332a-4841-98a1-6b04653b81de",
+		"publisherId": "a538cab4-3dfe-429e-a738-f218d9f7f34c",
+		"publisherDisplayName": "miqh"
+	}
+}
