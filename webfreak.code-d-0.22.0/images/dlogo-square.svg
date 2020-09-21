@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600" height="600" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+	<defs>
+		<linearGradient id="g0" x1="0%" y1="0%" x2="0%" y2="100%">
+			<stop offset="0%" stop-color="#380c17" />
+			<stop offset="60%" stop-color="#d84a4a" />
+			<stop offset="100%" stop-color="#db8f57" />
+		</linearGradient>
+		<linearGradient id="g1" x1="0%" y1="0%" x2="0%" y2="100%">
+			<stop offset="0%" stop-color="#c26060" />
+			<stop offset="30%" stop-color="#a83024" />
+			<stop offset="100%" stop-color="#d32d2d" />
+		</linearGradient>
+		<linearGradient id="g2" x1="0%" y1="0%" x2="0%" y2="100%">
+			<stop offset="0%" stop-color="#cc5522" />
+			<stop offset="33%" stop-color="#ae6240" />
+			<stop offset="66%" stop-color="#b9354b" />
+			<stop offset="100%" stop-color="#380c17" />
+		</linearGradient>
+		<pattern id="pattern0" x="0" y="0" patternUnits="userSpaceOnUse" width="50" height="50">
+			<g transform="rotate(45)">
+				<rect width="70" height="22" fill="#490d18" />
+				<rect y="-50" width="99" height="37" fill="#490d18" />
+			</g>
+		</pattern>
+		<filter id="shadow0" x="-50%" y="-50%" width="200%" height="200%">
+			<feOffset result="offOut" in="SourceGraphic" dx="25" dy="40" />
+			<feColorMatrix result="matrixOut" in="offOut" type="matrix" values="0.05 0 0 0 0 0 0.1 0 0 0 0 0 0.1 0.005 0 0 0 0 0.15 0.0" />
+			<feGaussianBlur result="blurOut" in="matrixOut" stdDeviation="10" />
+			<feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+		</filter>
+		<filter id="shadow1" x="-50%" y="-50%" width="200%" height="200%">
+			<feOffset result="offOut" in="SourceGraphic" dx="0" dy="0" />
+			<feColorMatrix result="matrixOut" in="offOut" type="matrix" values="0.05 0 0 0 0 0 0.05 0 0 0 0 0 0.05 0 0 0 0 0 0.2 0.0" />
+			<feGaussianBlur result="blurOut" in="matrixOut" stdDeviation="7" />
+			<feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+		</filter>
+	</defs>
+	<!--
+	VSCode marketplace background
+	<rect width="700" height="700" fill="#263238" />
+	-->
+	<g transform="translate(40,30)">
+		<polygon points="28,373 73,432 483,122 373,18" fill="url(#pattern0)" filter="url(#shadow1) url(#shadow0)" opacity="0.5" />
+		<polygon points="16,152 19,383 76,436 73,212" fill="url(#g0)" filter="url(#shadow1) url(#shadow0)" />
+		<polygon points="16,152 76,436 73,212" fill="rgb(64,0,16)" opacity="0.4" />
+		<polygon points="483,62 373,18 368,341 405,370 373,498  485,450" fill="url(#g2)" filter="url(#shadow1) url(#shadow0)" />
+		<polygon points="483,62 373,498 485,450" fill="rgb(64,0,16)" opacity="0.3" />
+		<polygon points="16,142 60,118 485,450 373,498" fill="url(#g1)" filter="url(#shadow1) url(#shadow0)" />
+		<polygon points="16,142 60,118 373,498" fill="rgb(64,18,36)" opacity="0.7" />
+		<polygon points="220,272 430,437 378,458" fill="rgb(64,18,25)" opacity="0.2" />
+	</g>
+</svg>

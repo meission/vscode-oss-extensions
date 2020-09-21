@@ -1,0 +1,143 @@
+[
+	{
+		"name": "Empty Console Application",
+		"detail": "An empty main function with some common includes",
+		"path": "EmptyConsole",
+		"dub": {}
+	},
+	{
+		"name": "Basic Console Application",
+		"detail": "A console application with command line arguments and config loading",
+		"path": "BasicConsole",
+		"dub": {}
+	},
+	{
+		"name": "Empty DlangUI Application",
+		"detail": "An empty cross-platform GUI application using DlangUI",
+		"path": "EmptyDlangUI",
+		"dub": {
+			"dependencies": {
+				"dlangui": "~>0.9.177"
+			}
+		}
+	},
+	{
+		"name": "Empty GtkD Application",
+		"detail": "An empty GUI application using GtkD",
+		"path": "EmptyGTKD",
+		"dub": {
+			"dependencies": {
+				"gtk-d:gtkd": "~>3.8.0"
+			}
+		}
+	},
+	{
+		"name": "Empty Web Server",
+		"detail": "An empty web server using vibe.d",
+		"path": "EmptyVibeServer",
+		"dub": {
+			"dependencies": {
+				"vibe-d": "~>0.8.3"
+			}
+		}
+	},
+	{
+		"name": "Basic Web Server",
+		"detail": "A web server using vibe.d containing a placeholder index template and session support",
+		"path": "BasicVibeServer",
+		"dub": {
+			"dependencies": {
+				"vibe-d": "~>0.8.3"
+			}
+		}
+	},
+	{
+		"name": "Empty OpenGL Application using SDL",
+		"detail": "A triangle in a SDL window using OpenGL 3.2",
+		"path": "EmptyOpenGL_SDL",
+		"dub": {
+			"dependencies": {
+				"derelict-gl3": "~>1.0.24",
+				"derelict-sdl2": "~>2.1.4"
+			}
+		}
+	},
+	{
+		"name": "Empty Legacy OpenGL Application using SDL",
+		"detail": "A triangle in a SDL window using legacy OpenGL",
+		"path": "EmptyLegacyOpenGL_SDL",
+		"dub": {
+			"dependencies": {
+				"derelict-gl3": "~>1.0.24",
+				"derelict-sdl2": "~>2.1.4"
+			}
+		}
+	},
+	{
+		"name": "Empty Win32 Application",
+		"detail": "An empty window using the Win32 API",
+		"path": "EmptyWin32",
+		"dub": {}
+	},
+	{
+		"name": "Empty X11 Application",
+		"detail": "An empty window using xlib",
+		"path": "EmptyX11",
+		"dub": {
+			"dependencies": {
+				"x11": "~>1.0.20"
+			}
+		}
+	},
+	{
+		"name": "Empty Diamond Website",
+		"detail": "A basic website using Diamond MVC",
+		"path": "EmptyDiamondWebsite",
+		"dub": {
+			"dependencies": {
+				"vibe-d": "~>0.8.3",
+				"diamond": "~>2.8.5",
+				"mysql-native": "~>2.2.1"
+			},
+			"versions": [
+				"VibeDefaultMain",
+				"Diamond_Debug",
+				"Diamond_WebServer"
+			],
+			"sourcePaths": [
+				"core",
+				"models",
+				"controllers"
+			],
+			"stringImportPaths": [
+				"config",
+				"views"
+			]
+		}
+	},
+	{
+		"name": "Empty Diamond Web-API",
+		"detail": "A basic web-api using Diamond MVC",
+		"path": "EmptyDiamondWebApi",
+		"dub": {
+			"dependencies": {
+				"vibe-d": "~>0.8.3",
+				"diamond": "~>2.8.5",
+				"mysql-native": "~>2.2.1"
+			},
+			"versions": [
+				"VibeDefaultMain",
+				"Diamond_Debug",
+				"Diamond_WebApi"
+			],
+			"sourcePaths": [
+				"core",
+				"models",
+				"controllers"
+			],
+			"stringImportPaths": [
+				"config"
+			]
+		}
+	}
+]
